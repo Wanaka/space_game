@@ -42,7 +42,7 @@ class GameScene: SKScene {
                     //Bullet
                     let rotateBullet = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * 0.1), duration: 0.1)
                     self.Bullet.run(rotateBullet)
-                    
+                     
                     print("< : \(myData.rotationRate.y)")
                 }
             }
