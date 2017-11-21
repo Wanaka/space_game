@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD2435301FC477B100B56F11 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24352F1FC477B100B56F11 /* Bullet.swift */; };
 		DDB19D511FBFB15B009B92F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB19D501FBFB15B009B92F9 /* AppDelegate.swift */; };
 		DDB19D531FBFB15B009B92F9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DDB19D521FBFB15B009B92F9 /* GameScene.sks */; };
 		DDB19D551FBFB15B009B92F9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DDB19D541FBFB15B009B92F9 /* Actions.sks */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD24352F1FC477B100B56F11 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		DDB19D4D1FBFB15B009B92F9 /* mobile_rotate_game_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobile_rotate_game_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB19D501FBFB15B009B92F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB19D521FBFB15B009B92F9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				DDB19D521FBFB15B009B92F9 /* GameScene.sks */,
 				DDB19D541FBFB15B009B92F9 /* Actions.sks */,
 				DDB19D561FBFB15B009B92F9 /* GameScene.swift */,
+				DD24352F1FC477B100B56F11 /* Bullet.swift */,
 				DDB19D581FBFB15B009B92F9 /* GameViewController.swift */,
 				DDB19D5A1FBFB15B009B92F9 /* Main.storyboard */,
 				DDB19D5D1FBFB15B009B92F9 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				DDB19D571FBFB15B009B92F9 /* GameScene.swift in Sources */,
 				DDB19D591FBFB15B009B92F9 /* GameViewController.swift in Sources */,
 				DDB19D511FBFB15B009B92F9 /* AppDelegate.swift in Sources */,
+				DD2435301FC477B100B56F11 /* Bullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VR4U43Q79Z;
 				INFOPLIST_FILE = mobile_rotate_game_v1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.jonashaag.mobile-rotate-game-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VR4U43Q79Z;
 				INFOPLIST_FILE = mobile_rotate_game_v1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.jonashaag.mobile-rotate-game-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
