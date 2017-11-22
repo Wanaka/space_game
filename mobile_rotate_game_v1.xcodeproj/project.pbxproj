@@ -8,18 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		DD2435301FC477B100B56F11 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24352F1FC477B100B56F11 /* Bullet.swift */; };
+		DDAFC80E1FC572D4009A75AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDAFC80D1FC572D4009A75AF /* Assets.xcassets */; };
 		DDB19D511FBFB15B009B92F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB19D501FBFB15B009B92F9 /* AppDelegate.swift */; };
 		DDB19D531FBFB15B009B92F9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DDB19D521FBFB15B009B92F9 /* GameScene.sks */; };
 		DDB19D551FBFB15B009B92F9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DDB19D541FBFB15B009B92F9 /* Actions.sks */; };
 		DDB19D571FBFB15B009B92F9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB19D561FBFB15B009B92F9 /* GameScene.swift */; };
 		DDB19D591FBFB15B009B92F9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB19D581FBFB15B009B92F9 /* GameViewController.swift */; };
 		DDB19D5C1FBFB15B009B92F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB19D5A1FBFB15B009B92F9 /* Main.storyboard */; };
-		DDB19D5E1FBFB15B009B92F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB19D5D1FBFB15B009B92F9 /* Assets.xcassets */; };
 		DDB19D611FBFB15B009B92F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB19D5F1FBFB15B009B92F9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD24352F1FC477B100B56F11 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		DDAFC80D1FC572D4009A75AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB19D4D1FBFB15B009B92F9 /* mobile_rotate_game_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobile_rotate_game_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB19D501FBFB15B009B92F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB19D521FBFB15B009B92F9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		DDB19D561FBFB15B009B92F9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		DDB19D581FBFB15B009B92F9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DDB19D5B1FBFB15B009B92F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DDB19D5D1FBFB15B009B92F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB19D601FBFB15B009B92F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDB19D621FBFB15B009B92F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,8 +69,8 @@
 				DD24352F1FC477B100B56F11 /* Bullet.swift */,
 				DDB19D581FBFB15B009B92F9 /* GameViewController.swift */,
 				DDB19D5A1FBFB15B009B92F9 /* Main.storyboard */,
-				DDB19D5D1FBFB15B009B92F9 /* Assets.xcassets */,
 				DDB19D5F1FBFB15B009B92F9 /* LaunchScreen.storyboard */,
+				DDAFC80D1FC572D4009A75AF /* Assets.xcassets */,
 				DDB19D621FBFB15B009B92F9 /* Info.plist */,
 			);
 			path = mobile_rotate_game_v1;
@@ -137,9 +137,9 @@
 			files = (
 				DDB19D5C1FBFB15B009B92F9 /* Main.storyboard in Resources */,
 				DDB19D531FBFB15B009B92F9 /* GameScene.sks in Resources */,
-				DDB19D5E1FBFB15B009B92F9 /* Assets.xcassets in Resources */,
 				DDB19D611FBFB15B009B92F9 /* LaunchScreen.storyboard in Resources */,
 				DDB19D551FBFB15B009B92F9 /* Actions.sks in Resources */,
+				DDAFC80E1FC572D4009A75AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
