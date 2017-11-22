@@ -28,25 +28,17 @@ class GameScene: SKScene {
             if let myData = data
             {
                 if myData.rotationRate.y > 0.2
-                {   //Player
-//                    let rotatePlayer = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * -0.1), duration: 0.1)
-//                    self.Player.run(rotatePlayer)
-                    
-                    //Bullet
+                {   //Bullet
                     let rotatePointer = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * 0.1), duration: 0.1)
                     self.Pointer.run(rotatePointer)
                     print("> : \(myData.rotationRate.y)")
                 }
                 
                 if myData.rotationRate.y < 0.2
-                {   //Player
-//                    let rotatePlayer = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * -0.1), duration: 0.1)
-//                    self.Player.run(rotatePlayer)
-                    
-                    //Bullet
+                {   //Bullet
                     let rotatePointer = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * 0.1), duration: 0.1)
                     self.Pointer.run(rotatePointer)
-                     
+                    
                     print("< : \(myData.rotationRate.y)")
                 }
             }
@@ -57,60 +49,66 @@ class GameScene: SKScene {
     
     @objc func Enemies(){
         let Enemy = SKSpriteNode(imageNamed: "Ball")
-        Enemy.size = CGSize(width: 20, height: 20)
-        Enemy.color = UIColor(red: 0.9, green: 0.1, blue: 0.1, alpha: 1.0)
+        Enemy.size = CGSize(width: 40, height: 40)
+        Enemy.color = UIColor.gray
+//        Enemy.color = UIColor(red: 0.9, green: 0.1, blue: 0.1, alpha: 1.0)
         Enemy.colorBlendFactor = 1.0
         
-        let RandomPosNr = arc4random() % 4
+        let RandomPosNr = arc4random() % 8
         
         switch RandomPosNr{
-        case 0:
-            Enemy.position.x = 0
-            
-            var PosY = arc4random_uniform(UInt32(frame.size.height))
-            
+        case 0: //x: left, y: middle to bottom
+            Enemy.position.y = -CGFloat(arc4random_uniform(UInt32(frame.size.height)))
+            var PosX = frame.size.width
+            Enemy.position.x = -CGFloat(PosX)
+            self.addChild(Enemy)
+            break
+        case 1: //x: left, y: middle to top
+            Enemy.position.y = CGFloat(arc4random_uniform(UInt32(frame.size.height)))
+            var PosX = frame.size.width
+            Enemy.position.x = -CGFloat(PosX)
+            self.addChild(Enemy)
+            break
+        case 2://x: middle to left, y: top
+            Enemy.position.x = -CGFloat(arc4random_uniform(UInt32(frame.size.width)))
+            var PosY = frame.size.height
             Enemy.position.y = CGFloat(PosY)
-            
             self.addChild(Enemy)
-            
             break
-        case 1:
-            Enemy.position.y = 0
-            
-            var PosX = arc4random_uniform(UInt32(frame.size.width))
-            
-            Enemy.position.x = CGFloat(PosX)
-            
-            self.addChild(Enemy)
-            
-            break
-        case 2:
-            Enemy.position.y = frame.size.height
-            
-            var PosX = arc4random_uniform(UInt32(frame.size.width))
-            
-            Enemy.position.x = CGFloat(PosX)
-            
-            self.addChild(Enemy)
-            
-            break
-        case 3:
-            Enemy.position.x = frame.size.width
-            
-            var PosY = arc4random_uniform(UInt32(frame.size.height))
-            
+        case 3://x: middle to right, y: top
+            Enemy.position.x = CGFloat(arc4random_uniform(UInt32(frame.size.width)))
+            var PosY = frame.size.height
             Enemy.position.y = CGFloat(PosY)
-            
             self.addChild(Enemy)
-            
+            break
+        case 4://x: right, y: middle to top
+            Enemy.position.y = CGFloat(arc4random_uniform(UInt32(frame.size.height)))
+            var PosX = frame.size.width
+            Enemy.position.x = CGFloat(PosX)
+            self.addChild(Enemy)
+            break
+        case 5://x: right, y: middle to bottom
+            Enemy.position.y = -CGFloat(arc4random_uniform(UInt32(frame.size.height)))
+            var PosX = frame.size.width
+            Enemy.position.x = CGFloat(PosX)
+            self.addChild(Enemy)
+            break
+        case 6: //x: middle to right, y: bottom
+            Enemy.position.x = CGFloat(arc4random_uniform(UInt32(frame.size.width)))
+            var PosY = -frame.size.height
+            Enemy.position.y = CGFloat(PosY)
+            self.addChild(Enemy)
+            break
+        case 7: //x: middle to left, y: bottom
+            Enemy.position.x = -CGFloat(arc4random_uniform(UInt32(frame.size.width)))
+            var PosY = -frame.size.height
+            Enemy.position.y = CGFloat(PosY)
+            self.addChild(Enemy)
             break
         default:
-            
             break
         }
-        
         Enemy.run(SKAction.move(to: Player.position, duration: 3))
-        
     }
     
     func pointerCreate(){ // Pointer
@@ -138,9 +136,7 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(toPoint: t.location(in: self))
-           
         }
-        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
