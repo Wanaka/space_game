@@ -15,7 +15,8 @@ class GameScene: SKScene {
     var motionManager = CMMotionManager()
     
     private var Player = SKSpriteNode()
-    private var Pointer = SKSpriteNode()    
+    private var Pointer = SKSpriteNode()
+    private var Rocket = SKSpriteNode()
     var EnemyTimer = Timer()
     
     override func didMove(to view: SKView) {
@@ -25,12 +26,16 @@ class GameScene: SKScene {
         //Connect the game with the iphone gyro and make rotation of the world happen when iphone has been rotated.
         motionManager.gyroUpdateInterval = 0.017
         motionManager.startGyroUpdates(to: OperationQueue.current!) { (data, error) in
-            if let myData = data
+            if var myData = data
             {
                 if myData.rotationRate.y > 0.2
                 {   //Bullet
                     let rotatePointer = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * 0.1), duration: 0.1)
                     self.Pointer.run(rotatePointer)
+                    
+                    let rotateRocket = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * 0.1), duration: 0.1)
+                    self.Rocket.run(rotateRocket)
+                    
                     print("> : \(myData.rotationRate.y)")
                 }
                 
@@ -39,21 +44,55 @@ class GameScene: SKScene {
                     let rotatePointer = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * 0.1), duration: 0.1)
                     self.Pointer.run(rotatePointer)
                     
+                    let rotateRocket = SKAction.rotate(byAngle:CGFloat(myData.rotationRate.y * 0.1), duration: 0.1)
+                    self.Rocket.run(rotateRocket)
+                    
                     print("< : \(myData.rotationRate.y)")
                 }
             }
         }
         pointerCreate()
         playerCreate()
+        
+    }
+    
+    func Rockets(){
+        
+        Rocket = SKSpriteNode(imageNamed: "Ball")
+        
+        Rocket.size = CGSize(width: 60, height: 30)
+        Rocket.color = UIColor.red
+        Rocket.colorBlendFactor = 1.0
+        
+        Rocket.position = CGPoint(x: Pointer.position.x, y: Pointer.position.y + 90)
+        Rocket.physicsBody = SKPhysicsBody(circleOfRadius: Rocket.frame.width/2)
+        Rocket.physicsBody?.affectedByGravity = false
+        
+        Rocket.zPosition = 10
+        
+        Pointer.addChild(Rocket)
+        
+        var dx = CGFloat((Pointer.position.x) + Rocket.position.x)
+        var dy = CGFloat((Pointer.position.y) + Rocket.position.y)
+        
+        
+        
+        let magnitude = sqrt(dx * dx + dy * dy)
+        dx /= magnitude
+        dy /= magnitude
+        let vector = CGVector(dx: 30 * dx, dy: 30 * dy)
+        
+        Rocket.physicsBody?.applyImpulse(vector)
     }
     
     @objc func Enemies(){
         let Enemy = SKSpriteNode(imageNamed: "Ball")
         Enemy.size = CGSize(width: 40, height: 40)
         Enemy.color = UIColor.gray
-//        Enemy.color = UIColor(red: 0.9, green: 0.1, blue: 0.1, alpha: 1.0)
+        //        Enemy.color = UIColor(red: 0.9, green: 0.1, blue: 0.1, alpha: 1.0)
         Enemy.colorBlendFactor = 1.0
         
+        //Random positioning and movement
         let RandomPosNr = arc4random() % 8
         
         switch RandomPosNr{
@@ -136,6 +175,8 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchMoved(toPoint: t.location(in: self))
+            let location = t.location(in: self)
+            Rockets()
         }
     }
     
